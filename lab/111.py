@@ -21,7 +21,7 @@ def new_ball():
     y = randint(100, 900)
     r = randint(10, 100)
     color = COLORS[randint(0, 5)]
-    circle(screen, color, (x, y), 10)
+    circle(screen, color, (x, y), r)
 
 pygame.display.update()
 clock = pygame.time.Clock()
