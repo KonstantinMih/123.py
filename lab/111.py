@@ -7,9 +7,6 @@ pygame.font.init()
 FPS = 60
 screen = pygame.display.set_mode((1200, 900))
 
-name = socket.gethostname()
-records = open('Таблица игроков.txt', 'w')
-
 score = 0
 balls = []
 
@@ -67,14 +64,10 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
-            space = 20*' '
-            records.write(name + space + str(score))
-            records.close()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if click(event) != 0:
                 score = score + click(event)
                 print(score)
-                print(name)
     new_balls()
     draw_balls(screen, balls)
     move_balls()
